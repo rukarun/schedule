@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :start
       t.string :end
       t.string :all_day
+      t.string :introduction
 
       t.timestamps
     end

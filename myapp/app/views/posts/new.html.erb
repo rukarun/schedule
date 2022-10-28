@@ -1,0 +1,37 @@
+<h3>スケジュール新規作成</h3>
+
+<%= form_with model: @post do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :name ,"タイトル" %></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :start ,"開始日" %></th>
+      <td><%= f.text_field :start %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :end ,"終了日" %></th>
+      <td><%= f.text_field :end %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :all_day ,"終日" %></th>
+      <td><%= f.text_field :all_day %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :introduction ,"スケジュールメモ" %></th>
+      <td><%= f.text_area :introduction %></td>
+    </tr>
+  </table>
+
+  <div>
+    <ul>
+      <li><%= f.submit "登録完了する"%></li>
+      <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
+    </ul>
+  </div>
+<% end %>
