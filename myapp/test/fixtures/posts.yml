@@ -5,9 +5,11 @@ one:
   start: MyString
   end: MyString
   all_day: MyString
+  introduction: MyString
 
 two:
   name: MyString
   start: MyString
   end: MyString
   all_day: MyString
+  introduction: MyString

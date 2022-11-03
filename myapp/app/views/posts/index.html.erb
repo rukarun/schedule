@@ -1,5 +1,9 @@
 <h3>スケジュール一覧</h3>
 
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -9,6 +13,9 @@
       <th>終了日</th>
       <th>終日</th>
       <th>スケジュール更新日時</th>
+      <th>参照</th>
+      <th>編集</th>
+      <th>削除</th>
     </tr>
   </thead>
 
@@ -19,9 +26,23 @@
         <td><%= post.name %></td>
         <td><%= post.start %></td>
         <td><%= post.end %></td>
-        <td><%= post.all_day %></td>
-        <td><%= post.updated_at %></td>
-        <td><%= post.created_at %></td>
+        <td>
+          <% if post.all_day == "1" %>
+          ○
+          <% else post.all_day == "0" %> 
+          
+          <% end %>
+        </td>
+        <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+        <td>
+          <%= link_to "参照", post %>
+        </td>
+        <td>
+          <%= link_to "編集", [:edit, post] %>
+        </td>
+        <td>
+          <%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
