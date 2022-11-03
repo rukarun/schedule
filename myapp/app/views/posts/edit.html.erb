@@ -1,6 +1,8 @@
 <h3>スケジュール編集</h3>
 
-<%= form_with model: @post do |f| %>
+<%= render "shared/error", obj: @post %>
+
+<%= form_with model: @post, local: true do |f| %>
   <table>
     <tr>
       <th><%= f.label :name ,"タイトル" %></th>
